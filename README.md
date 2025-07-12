@@ -16,13 +16,14 @@ This is a fully responsive, mobile-first website for a fictional tour company, *
 ### 🛠 Tech Stack
 
 - HTML5
-- CSS3
+- Tailwind CSS
 - Vanilla JavaScript
 - Formsubmit for email delivery
 
 ### 🔗 Live Preview
 
-[https://yourusername.github.io/ericotour-safari](https://yourusername.github.io/ericotour-safari)
+[https://ydavis416.github.io/ericotour-safari]
+(https://davis416.github.io/ericotour-safari)
 
 ### 📦 To Use
 

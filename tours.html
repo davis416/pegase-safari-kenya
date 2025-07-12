@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour - Ericotour Safari</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for elements where Tailwind classes aren't enough or for specific overrides */
+
+    /* Basic dark mode transition (Tailwind handles most dark mode via 'dark:' prefix) */
+    body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Slideshow specific styles not easily done with Tailwind classes alone */
+    .mySlides {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    /* Specific active state for dots if Tailwind's default isn't enough */
+    .dot.active {
+      background-color: #717171 !important; /* Use !important to override Tailwind if necessary */
+    }
+
+    /* Override Tailwind's default link underlines if desired */
+    a {
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+<a href="https://wa.me/254112485855" class="fixed bottom-10 right-10 z-50 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300" target="_blank" title="Chiacchiera con noi su WhatsApp">
+  <img src="images/whatsapp.png" alt="WhatsApp" class="w-9 h-9" />
+</a>
+
+  <header class="flex justify-between items-center bg-white dark:bg-gray-800 py-4 px-8 shadow-md">
+       <div class="flex items-center text-2xl font-bold text-gray-800 dark:text-gray-100">
+         <img src="images/logo.png" alt="Logo Ericotour Safari" class="h-10 w-auto mr-3">
+         Ericotour Safari
+     </div>
+    <nav class="flex space-x-6">
+      <a href="index.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Home</a>
+      <a href="tours.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Tour</a>
+      <a href="booking.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Prenotazione</a>
+      <a href="contact.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Contatto</a>
+      <button id="mode-toggle" class="text-2xl cursor-pointer ml-4 transition-transform hover:scale-110">🌞</button>
+    </nav>
+  </header>
+
+  <section class="relative max-w-full mx-auto mb-10 overflow-hidden">
+    <div class="relative w-full overflow-hidden">
+      <div class="mySlides relative w-full h-[600px] hidden">
+        <img src="images/bg1.jpg" alt="Elefanti al tramonto" class="w-full h-full object-cover">
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white text-4xl md:text-5xl lg:text-6xl font-bold p-4 rounded-md text-center w-4/5">Vivi il Cuore Selvaggio dell'Africa</div>
+      </div>
+
+      <div class="mySlides relative w-full h-[600px] hidden">
+        <img src="images/bg2.jpg" alt="Leoni che riposano" class="w-full h-full object-cover">
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white text-4xl md:text-5xl lg:text-6xl font-bold p-4 rounded-md text-center w-4/5">Viaggia Attraverso Paesaggi Maestosi</div>
+      </div>
+
+      <div class="mySlides relative w-full h-[600px] hidden">
+        <img src="images/bg3.jpg" alt="Zebre al pascolo" class="w-full h-full object-cover">
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white text-4xl md:text-5xl lg:text-6xl font-bold p-4 rounded-md text-center w-4/5">Scopri Incontri Incredibili con la Fauna Selvatica</div>
+      </div>
+
+      <div class="mySlides relative w-full h-[600px] hidden">
+        <img src="images/background.jpg" alt="Safari in mongolfiera" class="w-full h-full object-cover">
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white text-4xl md:text-5xl lg:text-6xl font-bold p-4 rounded-md text-center w-4/5">Ti Aspettano Avventure Indimenticabili</div>
+      </div>
+
+      <a class="absolute top-1/2 -translate-y-1/2 left-0 text-white text-5xl md:text-6xl font-bold p-4 bg-black bg-opacity-40 hover:bg-opacity-80 transition-colors cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="absolute top-1/2 -translate-y-1/2 right-0 text-white text-5xl md:text-6xl font-bold p-4 bg-black bg-opacity-40 hover:bg-opacity-80 transition-colors cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="text-center mt-4">
+      <span class="dot inline-block h-4 w-4 mx-1 bg-gray-400 dark:bg-gray-600 rounded-full cursor-pointer hover:bg-gray-600 dark:hover:bg-gray-400 transition-colors" onclick="currentSlide(1)"></span>
+      <span class="dot inline-block h-4 w-4 mx-1 bg-gray-400 dark:bg-gray-600 rounded-full cursor-pointer hover:bg-gray-600 dark:hover:bg-gray-400 transition-colors" onclick="currentSlide(2)"></span>
+      <span class="dot inline-block h-4 w-4 mx-1 bg-gray-400 dark:bg-gray-600 rounded-full cursor-pointer hover:bg-gray-600 dark:hover:bg-gray-400 transition-colors" onclick="currentSlide(3)"></span>
+      <span class="dot inline-block h-4 w-4 mx-1 bg-gray-400 dark:bg-gray-600 rounded-full cursor-pointer hover:bg-gray-600 dark:hover:bg-gray-400 transition-colors" onclick="currentSlide(4)"></span>
+    </div>
+  </section>
+
+  <section class="py-10 px-5 text-center flex-grow">
+    <h2 class="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-10">Esplora le Nostre Avventure Safari</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/maasai_mara.jpg" alt="Maasai Mara" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Safari Maasai Mara</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">3 giorni di indimenticabili safari nel parco più famoso del Kenya, assistendo alla Grande Migrazione (stagionale).</p>
+          <a href="booking.html?tour=maasaimara" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/amboseli.jpg" alt="Amboseli" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Avventura Elefanti Amboseli</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Avvicinati ai magnifici elefanti e scatta foto iconiche con il Monte Kilimanjaro come sfondo.</p>
+          <a href="booking.html?tour=amboseli" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/diani.jpg" alt="Tour costiero" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Fuga a Diani Beach & Costa</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Rilassati sull'Oceano Indiano con sabbie bianche incontaminate, vivaci barriere coralline e calde brezze costiere.</p>
+          <a href="booking.html?tour=diani" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/tsavo.jpg" alt="Parco Nazionale Tsavo" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Spedizione Tsavo East & West</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Scopri i "Mangia-uomini di Tsavo" e le vaste pianure che ospitano elefanti rossi e una fauna selvatica diversificata.</p>
+          <a href="booking.html?tour=tsavo" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/lake_nakuru.jpg" alt="Parco Nazionale del Lago Nakuru" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Birdwatching & Safari Rinoceronti al Lago Nakuru</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Ammira migliaia di fenicotteri e i rari rinoceronti bianchi e neri in questo splendido parco lacustre salino.</p>
+          <a href="booking.html?tour=lakenakuru" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/cultural.jpg" alt="Tour culturale locale" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Immersione Culturale Autentica</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Interagisci con le comunità locali, scopri le loro tradizioni e vivi il vibrante patrimonio del Kenya.</p>
+          <a href="booking.html?tour=cultural" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/trekking.jpg" alt="Trekking sul Monte Kenya" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Esperienza di Trekking sul Monte Kenya</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Mettiti alla prova con un'escursione sulle vette del Monte Kenya, offrendo panorami alpini mozzafiato.</p>
+          <a href="booking.html?tour=mtkenya" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/ol_pejeta.jpg" alt="Ol Pejeta Conservancy" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Safari Scimpanzé & Rinoceronti Ol Pejeta</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Visita il più grande santuario di rinoceronti neri dell'Africa orientale e l'unico santuario di scimpanzé in Kenya.</p>
+          <a href="booking.html?tour=olpejeta" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/watamu.jpg" alt="Spiagge di Watamu, Jacaranda & Malindi" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Spiagge di Watamu, Jacaranda & Malindi</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Esplora sabbie bianche incontaminate, acque limpide per lo snorkeling e una vivace vita marina in queste splendide gemme costiere.</p>
+          <a href="booking.html?tour=watamu" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/mambrui.jpg" alt="Dune di Sabbia e Spiaggia di Mambrui" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Dune di Sabbia & Spiaggia di Mambrui</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Vivi le uniche dune di sabbia dorata che incontrano l'Oceano Indiano, perfette per la fotografia e tranquille passeggiate sulla spiaggia.</p>
+          <a href="booking.html?tour=mambrui" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Visualizza Dettagli & Prenota</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-8 text-center mt-12">
+    <p class="mb-4">&copy; 2025 Ericotour Safari. Tutti i diritti riservati.</p>
+       <div class="flex justify-center space-x-4">
+         <a href="https://www.facebook.com/ericotoursafari" target="_blank" aria-label="Facebook">
+           <img src="images/facebook.svg" alt="Logo di Facebook" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+         <a href="https://www.instagram.com/ericotoursafari1999" target="_blank" aria-label="Instagram">
+           <img src="images/instagram.svg" alt="Logo di Instagram" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+         <a href="https://www.tiktok.com/@erickmwangalamgan" target="_blank" aria-label="TikTok">
+           <img src="images/tiktok.svg" alt="Logo di TikTok" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+     </div>
+  </footer>
+
+  <script>
+    // JavaScript for the Slideshow
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+        dots[i].classList.remove("bg-gray-600"); // Remove Tailwind active color
+        dots[i].classList.add("bg-gray-400"); // Add default Tailwind color
+        if (document.body.classList.contains('dark')) {
+          dots[i].classList.remove("bg-gray-400");
+          dots[i].classList.add("bg-gray-600"); // Dark mode default color
+        }
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].classList.add("active", "bg-gray-600"); // Add Tailwind active color
+      if (document.body.classList.contains('dark')) {
+        dots[slideIndex-1].classList.remove("bg-gray-600");
+        dots[slideIndex-1].classList.add("bg-gray-400"); // Dark mode active color
+      }
+    }
+
+    // Auto-advance slideshow
+    let autoSlideTimeout;
+    function autoShowSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++; // Use the same slideIndex variable for consistency
+      if (slideIndex > slides.length) {slideIndex = 1}
+      for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+        dots[i].classList.remove("bg-gray-600");
+        dots[i].classList.add("bg-gray-400");
+        if (document.body.classList.contains('dark')) {
+          dots[i].classList.remove("bg-gray-400");
+          dots[i].classList.add("bg-gray-600");
+        }
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].classList.add("active", "bg-gray-600");
+      if (document.body.classList.contains('dark')) {
+        dots[slideIndex-1].classList.remove("bg-gray-600");
+        dots[slideIndex-1].classList.add("bg-gray-400");
+      }
+      clearTimeout(autoSlideTimeout); // Clear previous timeout
+      autoSlideTimeout = setTimeout(autoShowSlides, 5000); // Change image every 5 seconds
+    }
+
+    // Start the auto-slideshow and reset on manual navigation
+    showSlides(slideIndex); // Initialize first slide
+    autoShowSlides(); // Start the auto-slideshow
+
+    // Override dot and arrow click functions to reset auto-advance
+    const originalPlusSlides = plusSlides;
+    plusSlides = function(n) {
+        originalPlusSlides(n);
+        clearTimeout(autoSlideTimeout);
+        autoSlideTimeout = setTimeout(autoShowSlides, 5000);
+    };
+
+    const originalCurrentSlide = currentSlide;
+    currentSlide = function(n) {
+        originalCurrentSlide(n);
+        clearTimeout(autoSlideTimeout);
+        autoSlideTimeout = setTimeout(autoShowSlides, 5000);
+    };
+
+    // Dark mode toggle functionality
+    document.getElementById('mode-toggle').addEventListener('click', function() {
+        document.body.classList.toggle('dark');
+        const isDarkMode = document.body.classList.contains('dark');
+        this.textContent = isDarkMode ? '🌙' : '🌞'; // Change icon
+        // Update dots colors immediately on toggle
+        let dots = document.getElementsByClassName("dot");
+        for (let i = 0; i < dots.length; i++) {
+          if (dots[i].classList.contains('active')) {
+            // If active, swap its active color based on mode
+            if (isDarkMode) {
+                dots[i].classList.remove('bg-gray-600');
+                dots[i].classList.add('bg-gray-400');
+            } else {
+                dots[i].classList.remove('bg-gray-400');
+                dots[i].classList.add('bg-gray-600');
+            }
+          } else {
+            // If not active, swap its default color based on mode
+            if (isDarkMode) {
+                dots[i].classList.remove('bg-gray-400');
+                dots[i].classList.add('bg-gray-600');
+            } else {
+                dots[i].classList.remove('bg-gray-600');
+                dots[i].classList.add('bg-gray-400');
+            }
+          }
+        }
+    });
+
+    // Initialize dark mode icon on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const modeToggle = document.getElementById('mode-toggle');
+        if (modeToggle) {
+            modeToggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
+        }
+    });
+  </script>
+</body>
+</html>

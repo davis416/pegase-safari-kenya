@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ericotour Safari - La Tua Avventura Africana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for elements where Tailwind classes aren't enough or for specific overrides */
+
+    /* Basic dark mode transition */
+    body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Override Tailwind's default link underlines if desired */
+    a {
+        text-decoration: none;
+    }
+
+    /* Ensure html and body take full height for proper flex-grow on main content */
+    html, body {
+        height: 100%;
+    }
+    body {
+        min-height: 100vh;
+    }
+
+    /* Specific background image for hero section. */
+    .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+  <a href="https://wa.me/254112485855" class="fixed bottom-10 right-10 z-50 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300" target="_blank" title="Chiacchiera con noi su WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp" class="w-9 h-9" />
+  </a>
+
+  <header class="flex justify-between items-center bg-white dark:bg-gray-800 py-4 px-8 shadow-md">
+       <div class="flex items-center text-2xl font-bold text-gray-800 dark:text-gray-100">
+         <img src="images/logo.png" alt="Logo Ericotour Safari" class="h-10 w-auto mr-3">
+         Ericotour Safari
+     </div>
+    <nav class="flex space-x-6">
+      <a href="index.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Home</a>
+      <a href="tours.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Tour</a>
+      <a href="booking.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Prenotazione</a>
+      <a href="contact.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Contatto</a>
+      
+      <button id="mode-toggle" class="text-2xl cursor-pointer ml-4 transition-transform hover:scale-110">🌞</button>
+    </nav>
+  </header>
+
+  <section class="hero relative h-[500px] flex items-center justify-center text-white text-center px-4 flex-shrink-0">
+    <div class="hero-content bg-black bg-opacity-40 p-8 rounded-lg shadow-xl max-w-2xl">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">Esplora la Natura Selvaggia con Ericotour Safari</h1>
+      <p class="text-lg md:text-xl mb-8 drop-shadow-md">Intraprendi viaggi indimenticabili attraverso i tesori nascosti dell'Africa, paesaggi mozzafiato e fauna selvatica incredibile.</p>
+      <a href="tours.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">Visualizza i Nostri Tour Safari</a>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 bg-white dark:bg-gray-800 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-10">Perché Scegliere Ericotour Safari?</h2>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md flex flex-col items-center">
+        <svg class="w-16 h-16 text-green-500 mb-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 002-2V4H4zm10 10v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-4a2 2 0 002 2h12zm-6 2a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Guide Esperte</h3>
+        <p class="text-gray-600 dark:text-gray-300">Le nostre guide locali sono appassionate, competenti e garantiscono un'autentica esperienza safari.</p>
+      </div>
+      <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md flex flex-col items-center">
+        <svg class="w-16 h-16 text-green-500 mb-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3H17V15H7V3zm-2 2a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V5zM3 7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"></path></svg>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Itinerari Personalizzati</h3>
+        <p class="text-gray-600 dark:text-gray-300">Tour personalizzabili per adattarsi ai tuoi sogni, al tuo budget e al tuo stile di viaggio.</p>
+      </div>
+      <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md flex flex-col items-center">
+        <svg class="w-16 h-16 text-green-500 mb-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-4.665-2.062a.75.75 0 00-.094.708A6.495 6.495 0 0010 16.5a6.495 6.495 0 004.759-2.289.75.75 0 00-.094-.708 5.002 5.002 0 01-4.665-2.062zM9.5 12a.5.5 0 00-.5.5v.5h-1a.5.5 0 000 1h1a.5.5 0 00.5-.5V12a.5.5 0 00-.5-.5zM12 9a.5.5 0 00-.5.5v.5h-1a.5.5 0 000 1h1a.5.5 0 00.5-.5V9a.5.5 0 00-.5-.5z" clip-rule="evenodd"></path></svg>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Turismo Sostenibile</h3>
+        <p class="text-gray-600 dark:text-gray-300">Impegnati a proteggere la fauna selvatica e a sostenere le comunità locali.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 text-center flex-grow">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-10">I Nostri Safari Popolari</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/maasai_mara.jpg" alt="Maasai Mara" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Avventura al Maasai Mara</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Vivi la Grande Migrazione e i Big Five da vicino nella riserva più iconica del Kenya.</p>
+          <a href="booking.html?tour=maasaimara" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Prenota Ora</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/diani.jpg" alt="Diani Beach" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Ritiro a Diani Beach</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Rilassati sull'Oceano Indiano con sabbie bianche incontaminate, vivaci barriere coralline e brezze calde.</p>
+          <a href="booking.html?tour=diani" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Prenota Ora</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+        <img src="images/amboseli.jpg" alt="Parco Nazionale Amboseli" class="w-full h-56 object-cover rounded-t-lg" />
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 text-left">Safari Elefanti ad Amboseli</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-left flex-grow">Ammira grandi mandrie di elefanti con il maestoso Monte Kilimanjaro come sfondo.</p>
+          <a href="booking.html?tour=amboseli" class="mt-auto inline-block bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 self-start">Prenota Ora</a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12">
+        <a href="tours.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">Visualizza Tutti i Tour</a>
+    </div>
+  </section>
+
+  <section class="bg-blue-600 dark:bg-blue-800 text-white py-16 px-6 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Non Trovi il Tuo Safari Perfetto?</h2>
+      <p class="text-lg md:text-xl mb-8">Lascia che creiamo un'avventura su misura per te, pensata per soddisfare i tuoi interessi e il tuo budget specifici.</p>
+      <a href="contact.html" class="inline-block bg-white text-blue-600 hover:bg-gray-200 dark:text-blue-800 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">Richiedi un Safari Personalizzato</a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-8 text-center mt-auto">
+    <p class="mb-4">&copy; 2025 Ericotour Safari. Tutti i diritti riservati.</p>
+       <div class="flex justify-center space-x-4">
+         <a href="https://www.facebook.com/ericotoursafari" target="_blank" aria-label="Facebook">
+           <img src="images/facebook.svg" alt="Logo di Facebook" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+         <a href="https://www.instagram.com/ericotoursafari1999" target="_blank" aria-label="Instagram">
+           <img src="images/instagram.svg" alt="Logo di Instagram" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+         <a href="https://www.tiktok.com/@erickmwangalamgan" target="_blank" aria-label="TikTok">
+           <img src="images/tiktok.svg" alt="Logo di TikTok" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+     </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle functionality
+    document.getElementById('mode-toggle').addEventListener('click', function() {
+        document.body.classList.toggle('dark');
+        const isDarkMode = document.body.classList.contains('dark');
+        this.textContent = isDarkMode ? '🌙' : '🌞'; // Change icon
+    });
+
+    // Initialize dark mode icon on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const modeToggle = document.getElementById('mode-toggle');
+        if (modeToggle) {
+            modeToggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
+        }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prenotazione - Ericotour Safari</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for elements where Tailwind classes aren't enough or for specific overrides */
+
+    /* Basic dark mode transition */
+    body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Override Tailwind's default link underlines if desired */
+    a {
+        text-decoration: none;
+    }
+
+    /* Ensure html and body take full height for proper flex-grow on main content */
+    html, body {
+        height: 100%;
+    }
+    body {
+        min-height: 100vh;
+    }
+
+    /* Additional styles for form elements for consistent look if Tailwind defaults aren't precise enough */
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    textarea {
+        @apply border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500 rounded-md;
+    }
+
+    /* Style for dark mode placeholder text */
+    .dark input::placeholder,
+    .dark textarea::placeholder {
+        color: #a0aec0; /* A lighter gray for dark mode placeholders */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+<a href="https://wa.me/254112485855" class="fixed bottom-10 right-10 z-50 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300" target="_blank" title="Chiacchiera con noi su WhatsApp">
+  <img src="images/whatsapp.png" alt="WhatsApp" class="w-9 h-9" />
+</a>
+
+  <header class="flex justify-between items-center bg-white dark:bg-gray-800 py-4 px-8 shadow-md">
+       <div class="flex items-center text-2xl font-bold text-gray-800 dark:text-gray-100">
+         <img src="images/logo.png" alt="Logo Ericotour Safari" class="h-10 w-auto mr-3">
+         Ericotour Safari
+     </div>
+    <nav class="flex space-x-6">
+      <a href="index.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Home</a>
+      <a href="tours.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Tour</a>
+      <a href="booking.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Prenotazione</a>
+      <a href="contact.html" class="text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 font-semibold transition-colors duration-300">Contatto</a>
+      <button id="mode-toggle" class="text-2xl cursor-pointer ml-4 transition-transform hover:scale-110">🌞</button>
+    </nav>
+  </header>
+
+  <section class="py-10 px-5 text-center flex-grow">
+    <h2 class="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-10">Prenota il Tuo Safari Indimenticabile</h2>
+
+    <div class="max-w-xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl mb-12">
+      <form id="bookingForm" action="https://formsubmit.co/erickmwangalamganga9@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nuova Richiesta di Prenotazione da Ericotour Safari!">
+        <input type="hidden" name="_captcha" value="false"> 
+        <div class="mb-5 text-left">
+          <label for="name" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Nome Completo:</label>
+          <input type="text" id="name" name="name" placeholder="Mario Rossi" required
+                 class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400">
+        </div>
+
+        <div class="mb-5 text-left">
+          <label for="email" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Indirizzo Email:</label>
+          <input type="email" id="email" name="email" placeholder="mario.rossi@esempio.com" required
+                 class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400">
+        </div>
+
+        <div class="mb-5 text-left">
+          <label for="phone" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Numero di Telefono:</label>
+          <input type="tel" id="phone" name="phone" placeholder="+39 3XX XXX XXXX"
+                 class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400">
+        </div>
+
+        <div class="mb-5 text-left">
+          <label for="tour" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Tour Selezionato:</label>
+          <input type="text" id="tour" name="tour" placeholder="es., Avventura Maasai Mara" required
+                 class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400">
+        </div>
+
+        <div class="mb-5 text-left">
+          <label for="date" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Data di Inizio Preferita:</label>
+          <input type="date" id="date" name="date"
+                 class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-50 dark:bg-gray-700">
+        </div>
+
+        <div class="mb-6 text-left">
+          <label for="message" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Note Aggiuntive / Richieste Specifiche:</label>
+          <textarea id="message" name="message" rows="4" placeholder="Eventuali esigenze alimentari specifiche, numero di viaggiatori, tipo di alloggio preferito, ecc."
+                    class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400"></textarea>
+        </div>
+
+        <button type="submit"
+                class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 w-full">
+          Invia Richiesta di Prenotazione
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-8 text-center mt-auto">
+    <p class="mb-4">&copy; 2025 Ericotour Safari. Tutti i diritti riservati.</p>
+       <div class="flex justify-center space-x-4">
+         <a href="https://www.facebook.com/ericotoursafari" target="_blank" aria-label="Facebook">
+           <img src="images/facebook.svg" alt="Logo di Facebook" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+         <a href="https://www.instagram.com/ericotoursafari1999" target="_blank" aria-label="Instagram">
+           <img src="images/instagram.svg" alt="Logo di Instagram" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+         <a href="https://www.tiktok.com/@erickmwangalamgan" target="_blank" aria-label="TikTok">
+           <img src="images/tiktok.svg" alt="Logo di TikTok" class="w-8 h-8 transform transition-transform duration-200 hover:scale-110">
+         </a>
+     </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle functionality (copied from other pages for consistency)
+    document.getElementById('mode-toggle').addEventListener('click', function() {
+        document.body.classList.toggle('dark');
+        const isDarkMode = document.body.classList.contains('dark');
+        this.textContent = isDarkMode ? '🌙' : '🌞'; // Change icon
+    });
+
+    // Initialize dark mode icon on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const modeToggle = document.getElementById('mode-toggle');
+        if (modeToggle) {
+            modeToggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
+        }
+
+        // Auto-fill tour based on URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedTour = urlParams.get('tour');
+        if (selectedTour) {
+            const tourInput = document.getElementById('tour');
+            // Map the short tour names from URL to more readable names (Italian)
+            const tourNames = {
+                'maasaimara': 'Avventura Maasai Mara',
+                'amboseli': 'Avventura Elefanti Amboseli',
+                'diani': 'Fuga a Diani Beach & Costa',
+                'tsavo': 'Spedizione Tsavo East & West',
+                'lakenakuru': 'Birdwatching & Safari Rinoceronti al Lago Nakuru',
+                'cultural': 'Immersione Culturale Autentica',
+                'mtkenya': 'Esperienza di Trekking sul Monte Kenya',
+                'olpejeta': 'Safari Scimpanzé & Rinoceronti Ol Pejeta',
+                'watamu': 'Spiagge di Watamu, Jacaranda & Malindi',
+                'mambrui': 'Dune di Sabbia & Spiaggia di Mambrui'
+            };
+            tourInput.value = tourNames[selectedTour] || selectedTour.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+            // Optionally disable the input if it's auto-filled so user doesn't accidentally change it
+            tourInput.readOnly = true;
+            tourInput.classList.add('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed'); // Visual cue for disabled
+        }
+    });
+  </script>
+</body>
+</html>

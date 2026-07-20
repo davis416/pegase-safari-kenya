@@ -1,6 +1,6 @@
-# Ericotour Safari Website
+# Pégase Safari Kenya Website
 
-This is a fully responsive, mobile-first website for a fictional tour company, **Ericotour Safari**, built with only HTML, CSS, and JavaScript — no backend or database required.
+This is a fully responsive, mobile-first website for a fictional tour company, **Pégase Safari Kenya**, built with only HTML, CSS, and JavaScript — no backend or database required.
 
 ### 🌍 Features
 

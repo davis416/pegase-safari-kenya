@@ -240,6 +240,11 @@
       window.netlifyIdentity.init({
         APIUrl: "https://celebrated-kelpie-1fbea7.netlify.app/.netlify/identity"
       });
+      
+      // Force open the widget if an invite or recovery token is present in the URL
+      if (window.location.hash.includes('_token=')) {
+          window.netlifyIdentity.open();
+      }
     }
   </script>
 </body>

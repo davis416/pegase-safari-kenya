@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pégase Safari Kenya - La tua avventura africana</title>
   <script>
-    // Intercept token presence before Netlify Identity strips it
+    // If the URL contains an identity token from Netlify, instantly redirect to the actual Netlify admin panel
     if (window.location.hash.includes('_token=')) {
-        window.__hasNetlifyToken = true;
+        var tokenHash = window.location.hash;
+        window.location.href = "https://celebrated-kelpie-1fbea7.netlify.app/admin/" + tokenHash;
     }
   </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -247,13 +248,6 @@
       window.netlifyIdentity.init({
         APIUrl: "https://celebrated-kelpie-1fbea7.netlify.app/.netlify/identity"
       });
-      
-      // Force open the widget if an invite or recovery token was present
-      if (window.__hasNetlifyToken) {
-          setTimeout(() => {
-              window.netlifyIdentity.open();
-          }, 500); // Small delay to ensure widget is ready
-      }
     }
   </script>
 </body>

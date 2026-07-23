@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: davis416/pegase-safari-kenya # Your GitHub repository
+  name: git-gateway
   branch: main # Branch to update
 
 media_folder: "images" # Media files will be stored in the repo under images/
